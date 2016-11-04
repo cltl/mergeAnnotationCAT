@@ -1,5 +1,5 @@
 # mergeAnnotationCAT
-Script to merge files annotated from different annotators (on the same task) to better explore (dis-)agreements using the CAT Tool
+Script to merge files annotated from different annotators (on the same task) to better explore (dis-)agreements using the <a href="https://dh.fbk.eu/resources/cat-content-annotation-tool">CAT Tool</a>
 
 The script works as follows:
 
