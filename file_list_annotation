@@ -1,2 +1,2 @@
-# markable - add markable names and attributes. If a markable has no attributes no need to add it to the list
+# markable - add markable names and attributes. Attributes must be separated by a \tab character. If a markable has no attributes no need to add it to the list.
 FOREGROUND	type
