@@ -40,6 +40,8 @@ def merge_data(anno1f, anno2f, outfile):
     anno1doc_root = anno1doc.getroot()
     anno1doc_root.getchildren()
 
+    docname1 = anno1doc_root.attrib.get('doc_name', 'null')
+
     store_token_anno1 = collections.defaultdict(list)
     store_annotation_anno1 = collections.defaultdict(list)
     store_markable_attribute_anno1 = collections.defaultdict(list)
@@ -59,6 +61,9 @@ def merge_data(anno1f, anno2f, outfile):
     anno2doc = etree.parse(anno2f, etree.XMLParser(remove_blank_text=True))
     anno2doc_root = anno2doc.getroot()
     anno2doc_root.getchildren()
+
+    docname2 = anno1doc_root.attrib.get('doc_name', 'null')
+
 
     store_token_anno2 = collections.defaultdict(list)
     store_annotation_anno2 = collections.defaultdict(list)
@@ -89,7 +94,7 @@ def merge_data(anno1f, anno2f, outfile):
         if int(k) == 0:
             token_anno1_new[int(k)] = v
         else:
-            new_k = int(k) + 1
+            new_k = int(k) * 2
             token_anno1_new[new_k] = v
 
 
@@ -100,8 +105,10 @@ def merge_data(anno1f, anno2f, outfile):
             new_k = int(k) + 1
             token_anno2_new[new_k] = v
         else:
-            new_k = int(k) + 2
+            new_k = int(k) * 2 + 1
             token_anno2_new[new_k] = v
+
+#    print(token_anno1_new)
 
 
     token_anno1_new.update(token_anno2_new)
